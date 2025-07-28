@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Slider</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./htmlPages/slider1.html">Slider 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./htmlPages/slider2.html">Slider 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./htmlPages/slider3.html">Slider 3</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Slider 1
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    The provided code implements a basic automatic image or content slider using JavaScript. It first
+                    selects the "Previous" and "Next" buttons (though not used in this snippet) and gathers all slide
+                    elements with the class .slide. It maintains a currSlideIndex to track the currently visible slide.
+                    The function handleNextSlideShow hides the current slide by setting its display to 'none', then
+                    increments the index (cycling back to 0 using modulo when the end is reached), and displays the next
+                    slide by setting its display to 'block'. Finally, the setInterval method automatically calls this
+                    function every 5 seconds, enabling the slides to transition automatically in a loop without user
+                    interaction.
+                    HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Slider 2
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    The provided code implements a manual slideshow navigation system using JavaScript, allowing users
+                    to switch between slides using "Previous" and "Next" buttons. It first selects the previous (.prev)
+                    and next (.next) buttons and gathers all slide elements with the class .slide. The current visible
+                    slide is tracked using the currSlideIndex variable. Two functions, handlePrevBtnClick and
+                    handleNextBtnClick, handle user interactions with the buttons. Each function hides the currently
+                    visible slide by setting its display to 'none', then updates the currSlideIndex—moving backward in
+                    the case of the previous button (while using modular arithmetic to wrap around to the last slide if
+                    needed) and forward in the case of the next button. The corresponding new slide is then displayed by
+                    setting its display to 'block'. Event listeners are attached to the buttons so that the appropriate
+                    function is called on each click, enabling the user to manually navigate through the slides.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Slider 3
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    The provided code creates a manual slideshow with navigation buttons that are intelligently enabled
+                    or disabled based on the current slide position. It starts by selecting the "Previous" and "Next"
+                    buttons and all slide elements with the class .slide. The currSlideIndex variable tracks which slide
+                    is currently visible. Helper functions (disablePreBtn, enablePreBtn, disableNextBtn, and
+                    enableNextBtn) are defined to control the interactivity and visual appearance of the navigation
+                    buttons by adjusting their pointerEvents and opacity.
+
+                    When the user clicks the Previous button, handlePrevBtnClick hides the current slide, shows the
+                    previous one, and decrements the index. It disables the Previous button if the first slide is
+                    reached and always enables the Next button (assuming it's no longer on the last slide). Similarly,
+                    handleNextBtnClick moves forward in the slideshow, hides the current slide, shows the next one,
+                    updates the index, and disables the Next button upon reaching the last slide while re-enabling the
+                    Previous button if needed.
+
+                    At the start, the Previous button is disabled to reflect that the first slide is visible. As users
+                    navigate forward or backward, the code ensures that buttons become inactive when reaching the
+                    beginning or end of the slide sequence—preventing invalid navigation and improving user experience.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
